@@ -1,4 +1,4 @@
-# VMS_Console_Java
+# Volunteer Management System
 
 A lightweight, console-based Java application for VMS (a general "Management System" console). This repository contains a small Java project that demonstrates core concepts for building interactive command-line management tools: CLI input/output, data models, basic persistence (file-based or in-memory), and modular code structure. Use this README to build, run, test, and contribute to the project.
 
