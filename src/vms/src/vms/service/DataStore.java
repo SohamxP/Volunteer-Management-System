@@ -50,7 +50,7 @@ public class DataStore {
         }
     }
 
-    // -------- Utility Methods ----------
+    //Utility Method
 
     public static String sha256(String s) {
         try {
@@ -89,7 +89,7 @@ public class DataStore {
         }
     }
 
-    // -------- USERS ----------
+    //USERS
     public List<User> loadUsers() {
         List<User> list = new ArrayList<>();
         for (String line : read(usersFile)) {
@@ -124,7 +124,7 @@ public class DataStore {
         return v;
     }
 
-    // -------- EVENTS ----------
+    //EVENTS
     public List<Event> loadEvents() {
         List<Event> list = new ArrayList<>();
         for (String line : read(eventsFile)) {
@@ -161,7 +161,7 @@ public class DataStore {
         return e;
     }
 
-    // -------- SIGNUPS ----------
+    //SIGN UPS
     public List<Signup> loadSignups() {
         List<Signup> list = new ArrayList<>();
         for (String line : read(signupsFile)) {
@@ -188,7 +188,7 @@ public class DataStore {
         return s;
     }
 
-    // -------- REAL-TIME ATTENDANCE ----------
+    //ATTENDANCE
     public List<Attendance> loadAttendance() {
         List<Attendance> list = new ArrayList<>();
 
@@ -224,7 +224,7 @@ public class DataStore {
         write(attendanceFile, out);
     }
 
-    // Create NEW check-in entry
+    // Create New check-in entry
     public Attendance addCheckIn(String eventId, String volunteerId, String checkInTime) {
         List<Attendance> list = loadAttendance();
 
