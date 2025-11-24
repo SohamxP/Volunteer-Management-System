@@ -12,13 +12,13 @@ public class AttendanceService {
         this.db = db;
     }
 
-    // ---------- CHECK-IN ----------
+    //CHECK IN
     public Attendance checkIn(String eventId, String volunteerId) {
         String now = LocalDateTime.now().toString();
         return db.addCheckIn(eventId, volunteerId, now);
     }
 
-    // ---------- CHECK-OUT ----------
+    //CHECK OUT
     public Attendance checkOut(String attendanceId) {
 
         List<Attendance> list = db.loadAttendance();
@@ -46,13 +46,13 @@ public class AttendanceService {
         return null;
     }
 
-    // ---------- SIGNUPS ----------
+    //SIGN UP
     public Signup signup(String eventId, String volunteerId) {
         List<Signup> list = db.loadSignups();
 
         for (Signup s : list) {
             if (s.getEventId().equals(eventId) && s.getVolunteerId().equals(volunteerId))
-                return null; // already signed up
+                return null; 
         }
         return db.addSignup(eventId, volunteerId);
     }
@@ -81,7 +81,7 @@ public class AttendanceService {
         return ok;
     }
 
-    // ---------- REPORTS ----------
+    //REPORTS
     public Map<String, String> detailedHoursByVolunteer() {
         Map<String, String> map = new HashMap<>();
         for (Attendance a : db.loadAttendance()) {
